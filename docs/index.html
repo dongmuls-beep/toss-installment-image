@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>토스 무이자 할부 안내</title>
+<style>
+  body { margin: 0; background: #f5f5f5; font-family: sans-serif; text-align: center; padding: 2rem; }
+  img  { max-width: 100%; border-radius: 8px; box-shadow: 0 2px 12px rgba(0,0,0,.1); }
+  pre  { background: #1e1e1e; color: #d4d4d4; padding: 1rem; border-radius: 6px;
+         text-align: left; display: inline-block; max-width: 700px; white-space: pre-wrap; }
+  h2   { color: #333; margin-top: 2rem; }
+</style>
+</head>
+<body>
+<h1>토스 무이자 할부 안내 이미지</h1>
+<p>매월 첫 영업일에 자동 갱신됩니다.</p>
+
+<img src="installment.png" alt="무이자 할부 안내">
+
+<h2>임베드 코드</h2>
+<pre>&lt;img src="https://dongmuls-beep.github.io/toss-installment-image/installment.png"
+     alt="무이자 할부 안내"&gt;</pre>
+
+<h2>최근 갱신</h2>
+<p id="meta">불러오는 중...</p>
+<script>
+fetch('last-updated.txt').then(r=>r.text()).then(t=>{
+  document.getElementById('meta').textContent = t.trim();
+}).catch(()=>{ document.getElementById('meta').textContent = '정보 없음'; });
+</script>
+</body>
+</html>
